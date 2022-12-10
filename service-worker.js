@@ -1,6 +1,6 @@
 const CACHE_NAME = 'latinica2cirilica-cache';
 const urlsToCache = [
-	'/',
+	'/latinica2cirilica',
 	'icons/icon-72x72.png',
 	'icons/icon-96x96.png',
 	'icons/icon-128x128.png',

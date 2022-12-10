@@ -14,6 +14,7 @@ module.exports = {
         'index.html',
         'manifest.json',
         'service-worker.js',
+        'favicon.ico',
         'favicons/*.png',
         'icons/*.png',
         'launch-screens/*.png',
