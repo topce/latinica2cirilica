@@ -77,10 +77,10 @@ ABCĆČDĐ Dž EFGHIJKL Lj MN Nj OPRSŠTUVŽZ
       // service worker shit
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./service-worker.js').then(
+          navigator.serviceWorker.register('/latinica2cirilica/service-worker.js', {scope: '/latinica2cirilica/'}).then(
             (registration) => {
               console.log(
-                `ServiceWorker registration successful with scope: ${registration.scope}`
+                `ServiceWorker registration successful with scope: latinica2cirilica`
               );
             },
             (error) => {
