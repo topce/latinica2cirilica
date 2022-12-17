@@ -3,13 +3,13 @@
 	"dir": "ltr",
 	"name": "latinica2cirilica",
 	"short_name": "latinica2cirilica",
-	"description": "",
+	"description": "Client side web application to convert Serbian Latin to Serbian Cyrillic",
 	"theme_color": "#000",
 	"background_color": "#000",
 	"display": "standalone",
-	"orientation": "portrait",
-	"scope": "/",
-	"start_url": "/",
+	"orientation": "landscape",
+	"scope": "https://topce.github.io/latinica2cirilica/",
+	"start_url": "https://topce.github.io/latinica2cirilica/",
 	"icons": [
 	{
 		"src": "icons/icon-72x72.png",

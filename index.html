@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="manifest" href="manifest.json" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
     <noscript
@@ -16,8 +16,11 @@
     >
     <script src="./bootstrap.js"></script>
 
-    <h1 class="text-6xl font-bold underline flex justify-center">ћирилица</h1>
-
+    <div class="flex justify-center">
+      <div class="mb-3 xl:w-96">
+        <input onchange="readFile(this)" type="file" accept="text/plain,.txt" />
+      </div>
+    </div>
     <div class="flex justify-center">
       <div class="mb-3 xl:w-96">
         <label for="latinica" class="inline-block mb-2 text-gray-700"
@@ -40,7 +43,12 @@ ABCĆČDĐ Dž EFGHIJKL Lj MN Nj OPRSŠTUVŽZ
       </div>
     </div>
     <div class="flex justify-center">
-      <input onchange="readFile(this)" type="file" accept="text/plain,.txt" />
+      <button
+        id="prepisi"
+        class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Препиши
+      </button>
     </div>
     <div class="flex justify-center">
       <div class="mb-3 xl:w-96">
@@ -56,14 +64,7 @@ ABCĆČDĐ Dž EFGHIJKL Lj MN Nj OPRSŠTUVŽZ
         </textarea>
       </div>
     </div>
-    <div class="flex justify-center">
-      <button
-        id="prepisi"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Препиши
-      </button>
-    </div>
+
     <script>
       function readFile(input) {
         let file = input.files[0];
@@ -76,19 +77,23 @@ ABCĆČDĐ Dž EFGHIJKL Lj MN Nj OPRSŠTUVŽZ
           console.error(fileReader.error);
         };
       }
-      // service worker shit
+      // service worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/latinica2cirilica/service-worker.js', {scope: '/latinica2cirilica/'}).then(
-            (registration) => {
-              console.log(
-                `ServiceWorker registration successful with scope: latinica2cirilica`
-              );
-            },
-            (error) => {
-              console.log(`ServiceWorker registration failed: ${error}`);
-            }
-          );
+          navigator.serviceWorker
+            .register('/latinica2cirilica/service-worker.js', {
+              scope: '/latinica2cirilica/',
+            })
+            .then(
+              (registration) => {
+                console.log(
+                  `ServiceWorker registration successful with scope: latinica2cirilica`
+                );
+              },
+              (error) => {
+                console.log(`ServiceWorker registration failed: ${error}`);
+              }
+            );
         });
       }
     </script>
