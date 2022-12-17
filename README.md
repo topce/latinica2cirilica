@@ -9,7 +9,7 @@ you can save a lot of money by using my 100% free
 100% open source PWA application :
 <https://topce.github.io/latinica2cirilica/>
 
-## technical deatails
+## technical details
 
 tool to create skeleton
 <https://github.com/rustwasm/create-wasm-app>
