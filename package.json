@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Client side web application to convert Serbian Latin to Serbian Cyrillic",
   "main": "index.js",
-  "bin": {
-    "create-wasm-app": ".bin/create-wasm-app.js"
-  },
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server",
