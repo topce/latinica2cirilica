@@ -5,6 +5,6 @@ document.getElementById('prepisi').onclick = function () {
 };
 
 function myFunction(ev) {
-  document.getElementById('cirilica').value = wasm.to_serbian_cyrillic(document.getElementById('latinica').value);
+  document.getElementById('cirilica').value = wasm.latin_to_cyrillic(document.getElementById('latinica').value);
   
 }

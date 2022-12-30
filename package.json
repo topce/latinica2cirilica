@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/topce/latinica2cirilica#readme",
   "devDependencies": {
-    "cirilica": "0.7.0",
+    "cirilica": "0.9.0",
     "copy-webpack-plugin": "11.0.0",
     "webpack": "5.75.0",
     "webpack-cli": "5.0.1",
