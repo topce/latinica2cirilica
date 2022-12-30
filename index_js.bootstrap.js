@@ -15,17 +15,7 @@
   \******************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var cirilica__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! cirilica */ \"./node_modules/cirilica/cirilica.js\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([cirilica__WEBPACK_IMPORTED_MODULE_0__]);\ncirilica__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\n\ndocument.getElementById('prepisi').onclick = function () {\n  myFunction();\n};\n\nfunction myFunction(ev) {\n  document.getElementById('cirilica').value = cirilica__WEBPACK_IMPORTED_MODULE_0__.to_serbian_cyrillic(document.getElementById('latinica').value);\n  \n}\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });\n\n//# sourceURL=webpack://latinica2cirilica/./index.js?");
-
-/***/ }),
-
-/***/ "./node_modules/cirilica/cirilica.js":
-/*!*******************************************!*\
-  !*** ./node_modules/cirilica/cirilica.js ***!
-  \*******************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"latin_to_cyrillic\": () => (/* reexport safe */ _cirilica_bg_js__WEBPACK_IMPORTED_MODULE_0__.latin_to_cyrillic)\n/* harmony export */ });\n/* harmony import */ var _cirilica_bg_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./cirilica_bg.js */ \"./node_modules/cirilica/cirilica_bg.js\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_cirilica_bg_js__WEBPACK_IMPORTED_MODULE_0__]);\n_cirilica_bg_js__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });\n\n//# sourceURL=webpack://latinica2cirilica/./node_modules/cirilica/cirilica.js?");
+eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var cirilica__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! cirilica */ \"./node_modules/cirilica/cirilica_bg.js\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([cirilica__WEBPACK_IMPORTED_MODULE_0__]);\ncirilica__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\n\ndocument.getElementById('prepisi').onclick = function () {\n  myFunction();\n};\n\nfunction myFunction(ev) {\n  document.getElementById('cirilica').value = cirilica__WEBPACK_IMPORTED_MODULE_0__.latin_to_cyrillic(document.getElementById('latinica').value);\n  \n}\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });\n\n//# sourceURL=webpack://latinica2cirilica/./index.js?");
 
 /***/ }),
 
