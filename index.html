@@ -5,11 +5,14 @@
     <title>Latinica2Ћирилица</title>
     <link rel="canonical" href="https://topce.github.io/latinica2cirilica/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#FFFFFF"/>
+    <meta name="theme-color" content="#FFFFFF" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="manifest" href="manifest.json" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon-152x152.png">
+    <link
+      rel="apple-touch-icon"
+      href="/favicons/apple-touch-icon-152x152.png"
+    />
   </head>
   <body>
     <noscript
@@ -73,18 +76,18 @@ ABCĆČDĐ Dž EFGHIJKL Lj MN Nj OPRSŠTUVŽZ
         let fileReader = new FileReader();
         fileReader.readAsText(file);
         fileReader.onloadend = function () {
-          document.getElementById('latinica').innerText = fileReader.result;
+          document.getElementById("latinica").innerText = fileReader.result;
         };
         fileReader.onerror = function () {
           console.error(fileReader.error);
         };
       }
       // service worker
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register('/latinica2cirilica/service-worker.js', {
-              scope: '/latinica2cirilica/',
+            .register("/latinica2cirilica/service-worker.js", {
+              scope: "/latinica2cirilica/",
             })
             .then(
               (registration) => {
