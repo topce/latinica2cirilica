@@ -4,7 +4,7 @@
 	"name": "latinica2cirilica",
 	"short_name": "latinica2cirilica",
 	"description": "Client side web application to convert Serbian Latin to Serbian Cyrillic",
-	"theme_color": "#000",
+	"theme_color": "#FFFFFF",
 	"background_color": "#000",
 	"display": "standalone",
 	"orientation": "landscape",
