@@ -35,7 +35,7 @@ eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__
   \************************************************/
 /***/ ((module, exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.v(exports, module.id, \"225c521aad535963edf3\");\n\n//# sourceURL=webpack://latinica2cirilica/./node_modules/cirilica/cirilica_bg.wasm?");
+eval("module.exports = __webpack_require__.v(exports, module.id, \"b0bf03563837f45b8af9\");\n\n//# sourceURL=webpack://latinica2cirilica/./node_modules/cirilica/cirilica_bg.wasm?");
 
 /***/ })
 
