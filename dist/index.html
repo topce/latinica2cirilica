@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Latinica2Ћирилица</title>
-    <link rel="canonical" href="https://topce.github.io/latinica2cirilica/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#FFFFFF" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="manifest" href="manifest.json" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      href="/favicons/apple-touch-icon-152x152.png"
-    />
-  </head>
-  <body>
-    <noscript
-      >This page contains webassembly and javascript content, please enable
-      javascript in your browser.</noscript
-    >
-    <script src="./bootstrap.js"></script>
-    <br />
-    <div class="flex justify-center">
-      <div class="mb-3 xl:w-96">
-        <input onchange="readFile(this)" type="file" accept="text/plain,.txt" />
-      </div>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Latinica2Ћирилица</title>
+  <link rel="canonical" href="https://topce.github.io/latinica2cirilica/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicons/apple-touch-icon-152x152.png" />
+</head>
+
+<body>
+  <noscript>This page contains webassembly and javascript content, please enable
+    javascript in your browser.</noscript>
+  <script src="./bootstrap.js"></script>
+  <br />
+  <div class="flex justify-center">
+    <div class="mb-3 xl:w-96">
+      <input onchange="readFile(this)" type="file" accept="text/plain,.txt" />
     </div>
-    <div class="flex justify-center">
-      <div class="w-full">
-        <label for="latinica" class="inline-block mb-2 text-gray-700"
-          >Latinica</label
-        >
-        <textarea
-          id="latinica"
-          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-          rows="8"
-          cols="80"
-        >
+  </div>
+  <div class="flex justify-center">
+    <div class="w-full">
+      <label for="latinica" class="inline-block mb-2 text-gray-700">Latinica</label>
+      <textarea id="latinica"
+        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+        rows="8" cols="80">
 Azbuka: 
 a b v g d đ e ž z i j k l lj m n nj o p r s t ć u f h c č dž š 
 A B V G D Đ E Ž Z I J K L Lj M N Nj O P R S T Ć U F H C Č Dž Š
@@ -45,63 +37,83 @@ Abeceda:
 a b c ć č d đ dž e f g h i j k l lj m n nj o p r s š t u v ž z   
 A B C Ć Č D Đ Dž E F G H I J K L Lj M N Nj O P R S Š T U V Ž Z
         </textarea>
-      </div>
     </div>
-    <br />
-    <div class="flex justify-center">
-      <button
-        id="prepisi"
-        class="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Препиши
-      </button>
-    </div>
-    <div class="flex justify-center">
-      <div class="w-full">
-        <label for="cirilica" class="inline-block mb-2 text-gray-700"
-          >Ћирилица</label
-        >
-        <textarea
-          id="cirilica"
-          class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-          rows="8"
-          cols="80"
-        >
+  </div>
+  <br />
+  <div class="flex justify-center">
+    <button id="prepisi" class="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Препиши
+    </button>
+  </div>
+  <div class="flex justify-center">
+    <div class="w-full">
+      <label for="cirilica" class="inline-block mb-2 text-gray-700">Ћирилица</label>
+      <textarea id="cirilica"
+        class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+        rows="8" cols="80">
         </textarea>
-      </div>
     </div>
+  </div>
+  <br />
+  <div class="flex justify-center">
+    <button onclick="saveTextAsFile()" class="bg-blue-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      Сачувај у фајл
+    </button>
+  </div>
 
-    <script>
-      function readFile(input) {
-        let file = input.files[0];
-        let fileReader = new FileReader();
-        fileReader.readAsText(file);
-        fileReader.onloadend = function () {
-          document.getElementById("latinica").innerText = fileReader.result;
-        };
-        fileReader.onerror = function () {
-          console.error(fileReader.error);
-        };
-      }
-      // service worker
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/latinica2cirilica/service-worker.js", {
-              scope: "/latinica2cirilica/",
-            })
-            .then(
-              (registration) => {
-                console.log(
-                  `ServiceWorker registration successful with scope: latinica2cirilica`
-                );
-              },
-              (error) => {
-                console.log(`ServiceWorker registration failed: ${error}`);
-              }
-            );
-        });
-      }
-    </script>
-  </body>
+
+  <script>
+    function readFile(input) {
+      let file = input.files[0];
+      let fileReader = new FileReader();
+      fileReader.readAsText(file);
+      fileReader.onloadend = function () {
+        document.getElementById('latinica').innerText = fileReader.result;
+      };
+      fileReader.onerror = function () {
+        console.error(fileReader.error);
+      };
+    }
+    // service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('/latinica2cirilica/service-worker.js', {
+            scope: '/latinica2cirilica/',
+          })
+          .then(
+            (registration) => {
+              console.log(
+                `ServiceWorker registration successful with scope: latinica2cirilica`
+              );
+            },
+            (error) => {
+              console.log(`ServiceWorker registration failed: ${error}`);
+            }
+          );
+      });
+    }
+    function saveTextAsFile() {
+      let textToSave = document.getElementById("cirilica").value;
+      let textToSaveAsBlob = new Blob([textToSave], { type: "text/plain" });
+      let textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+      let fileNameToSaveAs = "мојфајл.ткт";
+
+      let downloadLink = document.createElement("a");
+      downloadLink.download = fileNameToSaveAs;
+      downloadLink.innerHTML = "Download File";
+      downloadLink.href = textToSaveAsURL;
+      downloadLink.onclick = destroyClickedElement;
+      downloadLink.style.display = "none";
+      document.body.appendChild(downloadLink);
+
+      downloadLink.click();
+    }
+
+    function destroyClickedElement(event) {
+      document.body.removeChild(event.target);
+    }
+  </script>
+</body>
+
 </html>
